@@ -1,6 +1,7 @@
 #include "mergesort.h"
 #include <stdbool.h>
-#include <cstdlib>
+#include <stdlib.h>
+#include <stdio.h>
 
 //bool stands for boolean in C
 bool needsSorting(int rangeSize){
@@ -10,8 +11,8 @@ bool needsSorting(int rangeSize){
 void mergeRanges(int* values, int startIndex, int midPoint, int endIndex){
   int rangeSize = endIndex - startIndex;
   //result = (char*) calloc(len+1, sizeof(char));
-  char* destination;
-  destination = (char*) calloc(rangeSize+1, sizeof(char));
+  int* destination;
+  destination = (int*) calloc(rangeSize, sizeof(int));
   int firstIndex = startIndex;
   int secondIndex = midPoint;
   int copyIndex = 0;
@@ -52,7 +53,7 @@ void mergesortRange(int* values, int startIndex, int endIndex) {
   }
 }
 
-void mergesort(int, int* values) {
-  mergesortRange(values, 0, sizeof(values));
+void mergesort(int size, int* values) {
+  mergesortRange(values, 0, size);
   return;
 }

@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-
 #include "mergesort.h"
 
 void arrays_match(int size, int a[], int b[]) {
