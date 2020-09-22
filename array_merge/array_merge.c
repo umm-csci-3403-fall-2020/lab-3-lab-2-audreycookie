@@ -8,8 +8,10 @@
 //num_arrays is the number of arrays that are in values
 //sizes is an array that has the sizes of the corresponding array in values
 //values is an array of arrays with the number of arrays and size each array determined by num_arrays and sizes
+//essentially, putting all the elements into a big array, using mergesort, counting the unique number of characters and putting that final result into an array
+
 int* array_merge(int num_arrays, int* sizes, int** values) {
-  //int sizesIndex = sizeof(sizes); //the number of elements in the array sizes
+  
   int fullSize = 0; //variable for all the elements in values put together
   int* fullArray;
   for (int i = 0; i < num_arrays; ++i){ //the number of all the values in the values array with repeats
@@ -38,7 +40,7 @@ int* array_merge(int num_arrays, int* sizes, int** values) {
   }
   fullArrayIndex = 2;
   int* result = (int*) calloc(uniqueNum+1, sizeof(int));
-  result[0] = uniqueNum; //how many elements there will be
+  result[0] = uniqueNum; //how many unique elements there will be
   if (uniqueNum != 0) {
 	result[1] = fullArray[0];
   }
